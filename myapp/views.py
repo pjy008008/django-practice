@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from random import randint
 from django.views.decorators.csrf import csrf_exempt
+from django.template import loader
 # Create your views here.
 nextId = 4
 topics=[
@@ -47,8 +48,9 @@ def index(request):
     <h2>Welcome</h2>
     Hello,Django!
     '''
-    return HttpResponse(HTMLTemplate(article))
-
+    template= loader.get_template('myapp/index.html')
+    return render(request, 'myapp/index.html')
+# HttpResponse(HTMLTemplate(article))
 @csrf_exempt
 def create(request):
     global nextId
