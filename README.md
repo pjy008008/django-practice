@@ -10,5 +10,6 @@
 ### To do list
 - Add database
 - Add authentication system
-- Learn what is django model
+- Learn Django model
 - Learn web security
+- Learn SQL

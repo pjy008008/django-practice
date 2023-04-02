@@ -6,10 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
-    <title>index</title>
+    <title>Index</title>
 </head>
 <body>
-    <h1>Index file</h1>
-    
+    <h1>Make CRUD system</h1>
+    {% if topics %}
+        <ul>
+        {% for topic in topic %}
+            <li>{{ topic.body }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+    <!-- 
+        if you want to use python in html please add {%%}
+        there are a lot of python in html grammar -to learn
+    -->
 </body>
 </html>

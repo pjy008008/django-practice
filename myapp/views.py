@@ -44,12 +44,15 @@ def HTMLTemplate(article, id=None):
     </html>
     '''
 def index(request):
+    global topics
     article = '''
     <h2>Welcome</h2>
     Hello,Django!
     '''
-    template= loader.get_template('myapp/index.html')
-    return render(request, 'myapp/index.html')
+    # template= loader.get_template('myapp/index.html')
+    context = {'topics': topics}
+    return render(request, 'myapp/index.html', context)
+# HttpResponse(template.render(request)) 
 # HttpResponse(HTMLTemplate(article))
 @csrf_exempt
 def create(request):
